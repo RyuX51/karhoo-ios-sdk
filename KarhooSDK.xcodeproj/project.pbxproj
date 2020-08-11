@@ -158,7 +158,6 @@
 		14A4101824D1728200900F10 /* QuotesV2.json in Resources */ = {isa = PBXBuildFile; fileRef = 14A4101724D1728200900F10 /* QuotesV2.json */; };
 		14E69FDD24E182CC00133B1F /* AdyenPaymentMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E69FDC24E182CC00133B1F /* AdyenPaymentMethod.swift */; };
 		14E69FE024E1841400133B1F /* AdyenPaymentMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E69FDF24E1841400133B1F /* AdyenPaymentMethods.swift */; };
-		14E69FE224E1897300133B1F /* AdyenPaymentMethodsRequestPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E69FE124E1897300133B1F /* AdyenPaymentMethodsRequestPayload.swift */; };
 		14E69FE424E191D200133B1F /* AdyenPaymentMethodGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E69FE324E191D200133B1F /* AdyenPaymentMethodGroup.swift */; };
 		14E69FE624E1A4FA00133B1F /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E69FE524E1A4FA00133B1F /* Item.swift */; };
 		14E69FE824E1A6B400133B1F /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E69FE724E1A6B400133B1F /* Group.swift */; };
@@ -615,7 +614,6 @@
 		14A4101724D1728200900F10 /* QuotesV2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = QuotesV2.json; sourceTree = "<group>"; };
 		14E69FDC24E182CC00133B1F /* AdyenPaymentMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdyenPaymentMethod.swift; sourceTree = "<group>"; };
 		14E69FDF24E1841400133B1F /* AdyenPaymentMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdyenPaymentMethods.swift; sourceTree = "<group>"; };
-		14E69FE124E1897300133B1F /* AdyenPaymentMethodsRequestPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdyenPaymentMethodsRequestPayload.swift; sourceTree = "<group>"; };
 		14E69FE324E191D200133B1F /* AdyenPaymentMethodGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdyenPaymentMethodGroup.swift; sourceTree = "<group>"; };
 		14E69FE524E1A4FA00133B1F /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		14E69FE724E1A6B400133B1F /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
@@ -792,8 +790,6 @@
 		5CDD26D524BF502400436F01 /* QuoteRequestPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteRequestPoint.swift; sourceTree = "<group>"; };
 		BAA0A0172A18CDF485FF7519 /* KarhooPaymentSDKTokenInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KarhooPaymentSDKTokenInteractor.swift; sourceTree = "<group>"; };
 		BAA0A069D5D958868761AAF7 /* Passengers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Passengers.swift; sourceTree = "<group>"; };
-		BAA0A0EB15002AB0D857748A /* AddPaymentMethodInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPaymentMethodInteractor.swift; sourceTree = "<group>"; };
-		BAA0A1365EB1CC10CA0F94DE /* KarhooAddPaymentMethodInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KarhooAddPaymentMethodInteractor.swift; sourceTree = "<group>"; };
 		BAA0A1DD7F2A93BCD18DD3FE /* PositionExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PositionExt.swift; sourceTree = "<group>"; };
 		BAA0A2139A85B9FF7F56BED7 /* PaymentSDKTokenMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentSDKTokenMock.swift; sourceTree = "<group>"; };
 		BAA0A2498417189117D6F286 /* TripLocationDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripLocationDetails.swift; sourceTree = "<group>"; };
@@ -1767,7 +1763,6 @@
 				09AF9AAA20D1751D0046D725 /* RefreshTokenRequestPayload.swift */,
 				27421639BE5688EF2127E119 /* UserRegistration.swift */,
 				FCD32FEC20DAA1470044BB64 /* TripsRequestPayload.swift */,
-				14E69FE124E1897300133B1F /* AdyenPaymentMethodsRequestPayload.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -2211,7 +2206,6 @@
 				09F79E322239520D00D5B0B8 /* GetNonceInteractor */,
 				09C1A2382107367C004B6406 /* PaymentSDKTokenInteractor */,
 				5C224EAD223DC9E000C1CFCE /* AddPaymentDetailsInteractor */,
-				BAA0A94E30C5D3D2AC6F6466 /* AddPaymentMethodInteractor */,
 			);
 			path = Payment;
 			sourceTree = "<group>";
@@ -2590,15 +2584,6 @@
 				0907B99120D7B98A008915B1 /* KarhooCancelTripInteractorSpec.swift */,
 			);
 			path = CancelTripInteractor;
-			sourceTree = "<group>";
-		};
-		BAA0A94E30C5D3D2AC6F6466 /* AddPaymentMethodInteractor */ = {
-			isa = PBXGroup;
-			children = (
-				BAA0A0EB15002AB0D857748A /* AddPaymentMethodInteractor.swift */,
-				BAA0A1365EB1CC10CA0F94DE /* KarhooAddPaymentMethodInteractor.swift */,
-			);
-			path = AddPaymentMethodInteractor;
 			sourceTree = "<group>";
 		};
 		BAA0A9CC915480FA5B3811E7 /* TripSearchInteractor */ = {
@@ -3112,7 +3097,6 @@
 				43584E8F1EE5960700B4DFAB /* TripService.swift in Sources */,
 				31EC3F651F9E50AD008CD637 /* AnalyticsPayloadBuilder.swift in Sources */,
 				FCD32FE920DA9C4F0044BB64 /* TripSearchInteractor.swift in Sources */,
-				14E69FE224E1897300133B1F /* AdyenPaymentMethodsRequestPayload.swift in Sources */,
 				4371C59D1EB0E7F70059429D /* AnalyticsProvider.swift in Sources */,
 				0900D34B20D2B1920082D1E8 /* RefreshTokenError.swift in Sources */,
 				43F9399E1F3C85A300914E18 /* KarhooURLSessionSender.swift in Sources */,
