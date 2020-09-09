@@ -39,7 +39,9 @@ class KarhooUIConfigInteractor: UIConfigInteractor {
             return
         }
 
-        uiConfigProvider.fetchConfig(uiConfigRequest: request, organisation: userOrg, callback: typedCallback)
+        uiConfigProvider.fetchConfig(uiConfigRequest: request,
+                                     organisation: userOrg,
+                                     callback: typedCallback)
     }
 
     func cancel() {}

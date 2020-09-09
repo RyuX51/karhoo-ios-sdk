@@ -10,4 +10,8 @@ import Foundation
 
 public protocol ConfigService {
     func uiConfig(uiConfigRequest: UIConfigRequest) -> Call<UIConfig>
+
+    func configuration(request: ConfigurationRequest) -> Call<Configuration>
+
+    func configurationVersion(request: ConfigurationVersionRequest) -> Call<ConfigurationVersion>
 }

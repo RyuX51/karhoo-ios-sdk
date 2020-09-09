@@ -24,7 +24,7 @@ final class KarhooUIConfigProviderSpec: XCTestCase {
       */
     func testConfigForDefaultKarhooUsers() {
         let request = UIConfigRequest(viewId: "additionalFeedbackButton")
-        let organisation = OrganisationMock().set(id: "a1013897-132a-456c-9be2-636979095ad9").build()
+        let organisation = OrganisationMock().set(id: Keys.karhooUserOrg).build()
         testObject.fetchConfig(uiConfigRequest: request,
                                organisation: organisation,
                                callback: { result in
@@ -38,7 +38,7 @@ final class KarhooUIConfigProviderSpec: XCTestCase {
      */
     func testNoConfigFound() {
         let request = UIConfigRequest(viewId: "view that don't exist")
-        let organisation = OrganisationMock().set(id: "a1013897-132a-456c-9be2-636979095ad9").build()
+        let organisation = OrganisationMock().set(id: "blah").build()
         testObject.fetchConfig(uiConfigRequest: request,
                                organisation: organisation,
                                callback: { result in

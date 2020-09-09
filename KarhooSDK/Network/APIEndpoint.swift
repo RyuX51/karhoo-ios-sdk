@@ -35,6 +35,8 @@ enum APIEndpoint {
     case adyenPaymentMethods
     case adyenPayments
     case adyenPaymentsDetails
+    case flags(identifier: String, version: String, platform: String)
+    case latestFlags(identifier: String, platform: String)
 
     var path: String {
         switch self {
@@ -114,6 +116,10 @@ enum APIEndpoint {
             return "/payments/adyen/payments"
         case .adyenPaymentsDetails:
             return "/payments/adyen/payments-details"
+        case .flags(let identifier, let version, let platform):
+            return "/flags/\(identifier)/\(platform)/version=\(version)"
+        case .latestFlags(let identifier, let platform):
+            return "/flags/\(identifier)/\(platform)/version?"
         }
     }
 
@@ -152,6 +158,8 @@ enum APIEndpoint {
         case .adyenPaymentMethods: return .post
         case .adyenPayments: return .post
         case .adyenPaymentsDetails: return .post
+        case .latestFlags: return .get
+        case .flags: return .get
         }
     }
 
