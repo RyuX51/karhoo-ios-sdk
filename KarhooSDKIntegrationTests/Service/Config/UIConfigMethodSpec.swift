@@ -19,18 +19,24 @@ final class UIConfigMethod: XCTestCase {
     override func setUp() {
         super.setUp()
 
+        Karhoo.getUserService().logout().execute(callback: { _ in})
         authenticate()
         self.configService = Karhoo.getConfigService()
     }
 
     private func authenticate() {
         NetworkStub.successResponse(jsonFile: "AuthToken.json", path: "/v1/auth/token")
-        NetworkStub.successResponse(jsonFile: "AuthorisedUserInfo.json", path: "/v1/directory/users/me")
+
+        let user = UserInfo(userId: "id",
+                            organisations: [Organisation(id: Keys.karhooUserOrg,
+                                                         roles: ["MOBILE_USER"])])
+        NetworkStub.successData(data: user.encode()!, path: "/v1/directory/users/me")
 
         let expectation = self.expectation(description: "calls the callback with success")
 
         Karhoo.getUserService().login(userLogin: UserLogin(username: "mock",
-                                                           password: "mock")).execute(callback: { _ in
+                                                           password: "mock")).execute(callback: { result in
+                                                            print(result)
                                                             expectation.fulfill()
                                                            })
         waitForExpectations(timeout: 1)

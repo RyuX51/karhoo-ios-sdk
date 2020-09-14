@@ -25,6 +25,14 @@ final class NetworkStub {
         }
     }
 
+    static func successData(data: Data, path: String) {
+        stub(condition: isPath(path)) { _ in
+            return OHHTTPStubsResponse(data: data,
+                                       statusCode: 200,
+                                       headers: ["Content-Type": "application/json"])
+        }
+    }
+
     static func errorResponse(path: String, responseData: Data) {
         stub(condition: isPath(path)) { _ in
             return OHHTTPStubsResponse(data: responseData,
